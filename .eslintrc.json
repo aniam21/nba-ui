@@ -39,6 +39,7 @@
       }
     ],
     "comma-dangle": 0,
+    "no-trailing-spaces": "error",
     "linebreak-style": 0,
     "react/jsx-props-no-spreading": 0,
     "import/prefer-default-export": 0,
