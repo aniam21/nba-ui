@@ -9,7 +9,14 @@
     "strict": true,
     "noImplicitReturns": true,
     "rootDir": "src",
-    "outDir": "dist"
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist",
+    "baseUrl": "src",
+    "paths": {
+      "$services/*": ["../services/*"],
+      "$utils/*": ["./utils/*"],
+      "$types/*": ["./utils/types/*"],
+    },
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

@@ -4,6 +4,9 @@
       "@typescript-eslint/parser": [".ts", ".tsx"]
     }
   },
+  "import/resolver": {
+    "typescript": {}
+  },
   "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true,
@@ -30,7 +33,7 @@
   },
   "plugins": [   
     "react"
-],
+  ],
   "rules": {
     "react/function-component-definition": [
       2,
@@ -39,7 +42,7 @@
       }
     ],
     "comma-dangle": 0,
-    "no-trailing-spaces": "error",
+    "no-trailing-spaces": "warn",
     "linebreak-style": 0,
     "react/jsx-props-no-spreading": 0,
     "import/prefer-default-export": 0,
@@ -70,12 +73,7 @@
         "code": 140
       }
     ],
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      {
-        "varsIgnorePattern": "React"
-      }
-    ],
+    "@typescript-eslint/no-unused-vars": 1,
     "import/extensions": [
       "error",
       "ignorePackages",
