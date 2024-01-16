@@ -1,4 +1,4 @@
-import PlayersModule from 'services/players.module';
+import PlayersModule from 'services/players.service';
 import { useSetRecoilState } from 'recoil';
 import { playersState } from 'atoms/player.atoms';
 import { toast } from 'react-toastify';
