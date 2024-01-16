@@ -18,6 +18,7 @@ export const playersState = atom<PlayerResponse>({
   key: 'playersState',
   default: {
     metadata: {
+      nextPage: null,
       totalPages: 1,
       currentPage: 0,
       perPage: 0,

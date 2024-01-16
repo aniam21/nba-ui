@@ -29,6 +29,7 @@ export interface Metadata {
   totalPages: number;
   currentPage: number;
   perPage: number;
+  nextPage: number | null;
   totalCount: number;
 }
 

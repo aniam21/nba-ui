@@ -30,7 +30,6 @@ const AllPlayerList = () => {
 
   useEffect(() => {
     fetchPlayers(search, page);
-    console.log('fetching players', metadata, data);
   }, [page, search]);
 
   const handleSearch = (searchTerm: string) => {
@@ -40,10 +39,8 @@ const AllPlayerList = () => {
     setSearch(searchTerm);
   };
 
-  useEffect(() => {
-    console.log(players);
-  }
-  , [players]);
+  const noPlayersFound = !data.size && !loadingState;
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.loader}>
@@ -56,13 +53,14 @@ const AllPlayerList = () => {
             <PaginationFooter
               metadata={{
                 totalPages: metadata.totalPages || 1,
+                nextPage: metadata.nextPage || 1,
                 currentPage: page
               }}
             />
           }
         >
           <SearchBar handleSearch={handleSearch} />
-          {!data.size ? (
+          {noPlayersFound ? (
             <div>
               <EmptyFooter label="No Players Found" />
             </div>
