@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { Player } from '$types/player.interfaces';
 import ColorPicker from '../ColorPicker';
 import styles from './index.module.css';
+import Checkbox from '../Checkbox';
 
 interface ListItemProps {
   data: Player;
@@ -14,12 +15,13 @@ interface ListItemProps {
 const ListItem = ({ data, containerClassName, withColorPicker }: ListItemProps) => {
   const { fullName, position, team, height, id, color } = data;
   const { isIdFavorite, setFavoriteColor, toggleFavorite } = useFavorites();
+
   const handleColorChange = (colorPicked: string) => {
     setFavoriteColor(String(id), colorPicked);
   };
 
   const isFavorite = isIdFavorite(String(id));
-  const itemSelectedBsColor = isFavorite ? '#000000' : 'transparent';
+
   return (
     <div className={cx(styles.item__container, containerClassName)} style={{ background: color }}>
       <div className={styles.list__item}>{fullName}</div>
@@ -32,12 +34,7 @@ const ListItem = ({ data, containerClassName, withColorPicker }: ListItemProps) 
         </div>
       ) : null}
       <div className={styles.list__item}>
-        <span
-          style={{ backgroundColor: itemSelectedBsColor }}
-          className={cx(styles.custom__checkbox, isFavorite ? styles['custom__checkbox--checked'] : '')}
-        >
-          <input type="checkbox" id="checkbox" checked={isFavorite} onChange={() => toggleFavorite(String(data.id))} />
-        </span>
+        <Checkbox checked={isFavorite} id={id} onClick={(clickedId) => toggleFavorite(String(clickedId))} />
       </div>
     </div>
   );
