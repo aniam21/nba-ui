@@ -1,0 +1,13 @@
+.empty__container {
+  display: flex;
+  border: 4px dotted black;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty__label {
+  padding: 1rem;
+  font-size: x-large;
+}
