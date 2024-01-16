@@ -4,9 +4,6 @@
       "@typescript-eslint/parser": [".ts", ".tsx"]
     }
   },
-  "import/resolver": {
-    "typescript": {}
-  },
   "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true,
@@ -31,9 +28,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": [   
-    "react"
-  ],
+  "plugins": ["react", "import"],
   "rules": {
     "react/function-component-definition": [
       2,
@@ -41,6 +36,7 @@
         "namedComponents": "arrow-function"
       }
     ],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "comma-dangle": 0,
     "no-trailing-spaces": "warn",
     "linebreak-style": 0,
