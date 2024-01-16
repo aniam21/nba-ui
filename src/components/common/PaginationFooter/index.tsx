@@ -13,7 +13,7 @@ const PaginationFooter = ({metadata}: FooterProps) => {
   const { page, handleNext, handlePrev } = usePages();
   const prevDisabled = currentPage === 1;
   // API developers removed 'total_pages' due to errors during my task so checking if next page is available
-  const nextDisabled = totalPages === 1 || !nextPage || currentPage === totalPages;
+  const nextDisabled = (totalPages === 1 && !nextPage) || (currentPage === totalPages && totalPages !== 1);
   return (
     <div className={styles.list__footer}>
       <div className={styles.footer__prev}>
