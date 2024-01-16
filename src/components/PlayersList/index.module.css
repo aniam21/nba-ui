@@ -1,0 +1,27 @@
+.list__container{
+    width: 100%;
+  }
+  
+  
+.wrapper {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  position: relative;
+  
+}
+  .loading {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .list {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+  }
