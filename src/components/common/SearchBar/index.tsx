@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { IoIosSearch } from 'react-icons/io';
 
-import useSearch from 'hooks/useSearch';
+import useDebounce from 'hooks/useDebounce';
 import styles from './index.module.css';
 
 interface SearchBarProps {
@@ -10,7 +10,7 @@ interface SearchBarProps {
 
 const SearchBar = ({ handleSearch }: SearchBarProps) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const { useDebouncedValue } = useSearch();
+  const { useDebouncedValue } = useDebounce();
 
   const debouncedSearchTerm = useDebouncedValue(searchTerm, 700);
 

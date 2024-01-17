@@ -4,6 +4,7 @@ import { GetPlayersQuery, PlayerResponse } from '../utils/types/player.interface
 
 const {
   endpoints: { players },
+  PLAYERS_PER_PAGE
 } = config;
 
 export default class PlayersModule {
@@ -11,7 +12,7 @@ export default class PlayersModule {
 
   static getPlayers(query: GetPlayersQuery): Promise<PlayerResponse> {
     const { search , ...rest} = query;
-    const filter: GetPlayersQuery = { ...rest};
+    const filter: GetPlayersQuery = { ...rest, perPage: PLAYERS_PER_PAGE};
     if(search) filter.search = search;
     return HttpClient.get(PlayersModule.api, { ...filter });
   }
