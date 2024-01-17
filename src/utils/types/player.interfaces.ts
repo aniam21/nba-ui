@@ -12,14 +12,6 @@ export interface Player extends BackendPlayer {
   favorite?: boolean;
 }
 
-export interface PagesMetadata {
-  totalPages: number;
-  currentPage: number;
-  next_page?: number;
-  perPage: number;
-  totalCount: number;
-}
-
 export type PlayerResponse = {
   data: PlayersMap,
   metadata: Metadata
