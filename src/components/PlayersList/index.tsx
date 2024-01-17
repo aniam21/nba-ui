@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-no-useless-fragment */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useRecoilState, useRecoilValue } from 'recoil';
 
-import { loaderState, pageState, searchState } from 'atoms/filter.atoms';
+import { loaderState, pageState } from 'atoms/filter.atoms';
 import { playersState } from 'atoms/player.atoms';
 
 import PaginationFooter from 'components/common/PaginationFooter';
@@ -24,7 +24,7 @@ const AllPlayerList = () => {
 
   const players = useRecoilValue<PlayerResponse>(playersState);
   const [page, setPage] = useRecoilState(pageState);
-  const [search, setSearch] = useRecoilState(searchState);
+  const [search, setSearch] = useState("");
 
   const { metadata, data } = players;
 
