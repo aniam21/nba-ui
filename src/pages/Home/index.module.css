@@ -10,7 +10,6 @@
   gap: 2rem;
 }
 .list__wrapper {
-  /* margin: auto; */
   height: fit-content;
   min-width: 400px;
   width: 500px;
