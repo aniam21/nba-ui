@@ -20,6 +20,7 @@ function usePlayers() {
       data: playersMap
     };
     setPlayers(formattedPlayers);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     const message = err.response?.message ?? err.message;
     toast.error(message, {

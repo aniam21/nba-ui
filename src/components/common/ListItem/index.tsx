@@ -1,4 +1,3 @@
-import React from 'react';
 import { useFavorites } from 'hooks/useFavorites';
 import cx from 'classnames';
 import { Player } from '$types/player.interfaces';

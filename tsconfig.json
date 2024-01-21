@@ -2,10 +2,11 @@
   "compilerOptions": {
     "target": "es5",
     "module": "es2022",
+    "project": "./tsconfig.json",
     "moduleResolution": "node",
     "lib": ["es6", "dom"],
+    "jsx": "react-jsx",
     "sourceMap": true,
-    "jsx": "react",
     "strict": true,
     "noImplicitReturns": true,
     "rootDir": "src",
@@ -15,8 +16,8 @@
     "paths": {
       "$services/*": ["../services/*"],
       "$utils/*": ["./utils/*"],
-      "$types/*": ["./utils/types/*"],
-    },
+      "$types/*": ["./utils/types/*"]
+    }
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

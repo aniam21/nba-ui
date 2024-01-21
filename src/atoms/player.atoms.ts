@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { atom } from 'recoil';
 import { PlayerResponse, PlayersMap } from '$types/player.interfaces';
 

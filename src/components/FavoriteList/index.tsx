@@ -1,13 +1,12 @@
-import React from 'react';
 import List from 'components/common/List';
 import EmptyList from 'components/common/EmptyList';
 import { favoritePlayersState } from 'atoms/player.atoms';
 import { useRecoilValue } from 'recoil';
+import { Player, PlayersMap } from '$utils/types/player.interfaces';
 import ListItem from '../common/ListItem';
 
 import { tableHeaders } from '../../utils/defaultValues';
 import styles from './index.module.css';
-import { Player, PlayersMap } from '$utils/types/player.interfaces';
 
 const FavoriteList = () => {
   const favoritePlayers = useRecoilValue<PlayersMap>(favoritePlayersState);

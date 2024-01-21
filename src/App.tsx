@@ -1,4 +1,3 @@
-import React from 'react';
 import { RecoilRoot } from 'recoil';
 import { ToastContainer } from 'react-toastify';
 import Home from './pages/Home';

@@ -11,6 +11,7 @@ export const useFetch = () => {
     try {
       const data = await asyncAction;
       return data;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       return err.response?.data ?? err;
     } finally {

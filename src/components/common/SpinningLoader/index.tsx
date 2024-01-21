@@ -1,6 +1,4 @@
-import React from 'react';
 import { ColorRing } from 'react-loader-spinner';
-import styles from './index.module.css';
 
 interface SpinningLoaderProps {
   visible: boolean;

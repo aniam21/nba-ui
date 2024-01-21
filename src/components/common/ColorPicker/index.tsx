@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Wheel from '@uiw/react-color-wheel';
 import { ColorResult, hsvaToHex } from '@uiw/color-convert';
 
