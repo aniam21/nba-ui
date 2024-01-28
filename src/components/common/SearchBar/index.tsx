@@ -10,16 +10,26 @@ interface SearchBarProps {
 
 const SearchBar = ({ handleSearch }: SearchBarProps) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [shouldSearch, setShouldSearch] = useState(false);
   const { useDebouncedValue } = useDebounce();
 
   const debouncedSearchTerm = useDebouncedValue(searchTerm, 700);
 
   useEffect(() => {
-    const search = searchTerm.trim().replace(/[^A-Za-z]/g, '');
-    if (search.length > 1 || search.length === 0) handleSearch(search);
+    if (shouldSearch) {
+      const search = searchTerm.trim().replace(/[^A-Za-z]/g, '');
+      if (search.length > 1 || search.length === 0) {
+        handleSearch(search);
+      }
+    }
+
+    return () => {
+      setShouldSearch(false);
+    };
   }, [debouncedSearchTerm]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!shouldSearch) setShouldSearch(true);
     const { value } = e.target;
     if (/^[A-Za-z\s]*$/.test(value) || value === '') {
       setSearchTerm(value);

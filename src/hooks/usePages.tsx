@@ -1,23 +1,24 @@
 import { useCallback } from 'react';
 import { useRecoilState } from 'recoil';
-import { pageState } from '../atoms/filter.atoms';
+import { queryState } from '../atoms/filter.atoms';
 
 function usePages() {
-  const [page, setPage] = useRecoilState<number>(pageState);
+
+  const [query, setQuery] = useRecoilState<{ page: number, search: string}>(queryState);
 
   const handleNext = useCallback(() => {
-    setPage((prevState) => prevState + 1);
-  }, [page]);
+    setQuery((prevState) => ({ ...prevState ,page: prevState.page + 1}));
+  }, [query.page]);
 
   const handlePrev = useCallback(() => {
-    if (page === 1) return;
-    setPage((prevState) => prevState - 1);
-  }, [page]);
+    if (query.page === 1) return;
+    setQuery((prevState) => ({ ...prevState ,page: prevState.page - 1}));
+  }, [query.page]);
 
   return {
     handlePrev,
     handleNext,
-    page
+    query,
   };
 }
 

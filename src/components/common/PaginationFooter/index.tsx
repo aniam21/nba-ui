@@ -8,7 +8,7 @@ interface FooterProps {
 }
 const PaginationFooter = ({ metadata }: FooterProps) => {
   const { currentPage, nextPage, totalPages } = metadata;
-  const { page, handleNext, handlePrev } = usePages();
+  const { handleNext, handlePrev } = usePages();
   const prevDisabled = currentPage === 1;
   // API developers removed 'total_pages' due to errors during my task so checking if next page is available
   const nextDisabled = (nextPage && nextPage < currentPage + 1) || (currentPage === totalPages && totalPages !== 1);
@@ -19,7 +19,7 @@ const PaginationFooter = ({ metadata }: FooterProps) => {
           Prev
         </Button>
       </div>
-      {page} {metadata.totalPages > 1 ? `....${metadata.totalPages}` : ''}
+      {currentPage} {metadata.totalPages > 1 ? `....${metadata.totalPages}` : ''}
       <div className={styles.footer__next}>
         <Button disabled={nextDisabled} onClick={handleNext}>
           Next
