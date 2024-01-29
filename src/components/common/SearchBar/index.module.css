@@ -1,0 +1,21 @@
+.searchbar__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(214, 214, 65, 0.708);
+    border-radius: 5px;
+    height: 2rem;
+}
+.icon {
+    color: blue;
+}
+input {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+    padding: 0 0.5rem;
+    border-radius: 5px;
+}

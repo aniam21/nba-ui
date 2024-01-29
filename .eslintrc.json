@@ -8,6 +8,7 @@
     }
   },
   "parser": "@typescript-eslint/parser",
+  "ignorePatterns": ["node_modules/", "dist/", "build/", "coverage/"],
   "env": {
     "browser": true,
     "es6": true
@@ -30,16 +31,12 @@
       "jsx": true,
       "tsx": true
     },
-    "ecmaVersion": 2020,
+    "tsconfigRootDir": "./",
+    "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "./tsconfig.json",
-    "tsconfigRootDir": "./"
+    "project": "./tsconfig.json"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "react",
-    "import"
-  ],
+  "plugins": ["@typescript-eslint", "react", "import"],
   "rules": {
     "react/function-component-definition": [
       2,
@@ -47,7 +44,9 @@
         "namedComponents": "arrow-function"
       }
     ],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "comma-dangle": 0,
+    "no-trailing-spaces": "warn",
     "linebreak-style": 0,
     "react/jsx-props-no-spreading": 0,
     "import/prefer-default-export": 0,
@@ -60,10 +59,7 @@
       "error",
       {
         "required": {
-          "some": [
-            "nesting",
-            "id"
-          ]
+          "some": ["nesting", "id"]
         }
       }
     ],
@@ -71,10 +67,7 @@
       "error",
       {
         "required": {
-          "some": [
-            "nesting",
-            "id"
-          ]
+          "some": ["nesting", "id"]
         }
       }
     ],
